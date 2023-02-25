@@ -1,0 +1,43 @@
+.todo{
+    .todo-container {
+        background: #f2f2f2d1;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 20px;
+        margin: 20px 10px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.5);
+        //
+        h1 {
+          //border: 1px solid red;
+          width: 300px;
+          height: auto;
+          overflow: hidden;
+          word-wrap: break-word;
+
+          font-size: calc(10px + 2vmin);
+        }
+        h6 {
+          margin: 10px;
+          width: 100px;
+          
+        }
+        .icon-del{
+          width: 30px;
+          font-size: 28px;
+          transition: all 0.2s ease-in-out ;
+          color: red;
+          &:hover{
+            font-size: 32px;
+          }
+        }
+        input {
+          width: 20px;
+          height: 20px;
+          margin: 0px 15px;
+          cursor: pointer;
+        }
+      }
+}

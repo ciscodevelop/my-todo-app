@@ -1,0 +1,107 @@
+.todos {
+  // min-height:  100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.9) 0,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url("../../asset/img/honeycomb-texture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  //   &::before {
+  //     content: "";
+  //     background-image: linear-gradient(to top,
+  //      rgba(0, 0, 0, 0.689) 0,
+  //      rgba(0, 0, 0, 0) 60%,
+  //      rgba(0, 0, 0, 0.927)100%),url('../../asset/img/honeycomb-texture.jpg');
+  //      background-repeat: no-repeat;
+  //      background-size: cover;
+  //     position: absolute;
+  //     //height:100%;
+  //     top: 70px;
+  //     right: 0px;
+  //     bottom: 0px;
+  //     left: 0px;
+  //     opacity: 0.28;
+  //     z-index: -1;
+  // }
+  .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    // background-image: linear-gradient(to top,
+    //    rgba(0, 0, 0, 0.689) 0,
+    //    rgba(0, 0, 0, 0) 60%,
+    //    rgba(0, 0, 0, 0.927)100%),url('../../asset/img/honeycomb-texture.jpg');
+    //    background-repeat: no-repeat;
+    //    background-size: cover;
+
+    h1 {
+      margin: 20px 0px;
+      background: -webkit-linear-gradient(45deg, #09009f, #00ff95 50%);
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .top {
+      width: calc(100vw - 80px);
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 30px 0px;
+      padding: 10px;
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.155);
+      //border: 1px solid red;
+      position: relative;
+      input {
+        width: 300px;
+        height: 50px;
+        padding: 10px;
+        background: transparent;
+        font-size: 22px;
+        border: none;
+        border-bottom: 5px solid rgba(0, 0, 0, 0.5);
+        border-bottom-width: thin;
+        transition: all 2s ease-in-out;
+        outline: none;
+        position: sticky;
+       top: 0;
+        background: -webkit-linear-gradient(45deg, #09009f, #00ff95 50%);
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+         
+        &:focus {
+          &::placeholder {
+            font-size: 12px;
+            border-bottom-width: 2px;
+            color:   rgb(0, 0, 0);
+          }
+        }
+      }
+
+      .icon-add {
+        width: 50px;
+        height: 50px;
+        // margin-left: 40px;
+        color: teal;
+        cursor: pointer;
+      }
+    }
+    .bottom {
+     
+    }
+  }
+}
