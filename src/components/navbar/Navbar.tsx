@@ -21,7 +21,7 @@ const Navbar = ({menu ,setMenu}:any) => {
   };
   return (
     <nav className="navbar">
-      {menu&&<Menu/>}
+      {menu && <Menu setMenu={setMenu} />}
       
       <div className="left">
         <h3>Todo App</h3>
