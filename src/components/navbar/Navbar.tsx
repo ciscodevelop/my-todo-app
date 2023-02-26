@@ -24,7 +24,10 @@ const Navbar = ({menu ,setMenu}:any) => {
       {menu && <Menu setMenu={setMenu} />}
       
       <div className="left">
+        
+        <Link to={'/'}>
         <h3>Todo App</h3>
+        </Link>
       </div>
       <div className="right">
         <div className="link-navbar">
@@ -41,7 +44,7 @@ const Navbar = ({menu ,setMenu}:any) => {
             <div className="profile-container">
               <div className="profile-info">
                 <div className="img-pic">
-                  <img src={user?.user?.profilePic} alt="" />
+                  <img src={user.user?.profilePic?user.user.profilePic:'asset/img/avatarProfile.png'} alt="" />
                 </div>
                 <ArrowDropDownOutlined className="icon-arrow" />
                 <div className="menu-profile">
@@ -52,9 +55,12 @@ const Navbar = ({menu ,setMenu}:any) => {
             </div>
           </>
         ) : (
-          <>
+            <>
+              <div className="link-navbar">
+
             <Link to="/login">Login</Link>
             <Link to="/register">Register</Link>
+              </div>
           </>
         )}
         <div className="container-menu" onClick={() => setMenu(!menu)}>

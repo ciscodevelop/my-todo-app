@@ -9,8 +9,8 @@ const Menu = ({ setMenu }: any) => {
       <div className="link-menu">
         <Link to="/" onClick={handleCloseMenu}>Home</Link>
         <Link to="/todos" onClick={handleCloseMenu}>Todos</Link>
-        <Link to="/login" onClick={handleCloseMenu}>Sign up</Link>
-        <Link to="/register" onClick={handleCloseMenu}>Sign in</Link>
+        <Link to="/register" onClick={handleCloseMenu}>Sign up</Link>
+        <Link to="/login" onClick={handleCloseMenu}>Sign in</Link>
         <Link to="/about" onClick={handleCloseMenu}>About</Link>
       </div>
     </div>
