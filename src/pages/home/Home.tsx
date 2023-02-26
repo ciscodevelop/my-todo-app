@@ -10,12 +10,10 @@ const Home = () => {
   const navigate = useNavigate()
   const user=useAppSelector(selectUser)
   const [email, setEmail] = useState('')
+  
   function handleClick(e: any) {
-    e.preventDefault();
-
-    alert(user.user)
-    if (!user.user) {
-      
+    e.preventDefault();    
+    if (!user.user) {      
       navigate('/register',{state: email})  
     }else{navigate('/todos')}
     

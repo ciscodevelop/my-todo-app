@@ -1,9 +1,9 @@
 import { useState } from "react";
-import "./login.scss";
-import axios from "axios";
+import "./login.scss"; 
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addUser } from "../../features/user/userSlice";
+import { addUser } from "../../features/user/userSlice"; 
+import requestCallAxios from "../../features/axiosIstance/requestAxiosIstance";
 
 const Login = () => {
   const [inputs, setInputs] = useState<any>({});
@@ -13,8 +13,8 @@ const Login = () => {
   const handleLogin = async (e: any) => {
     e.preventDefault();
     try {
-      setError(false)
-      const result = await axios.post("http://localhost:8800/api/auth/login", {
+      setError(false);
+      const result = await requestCallAxios.post("auth/login", {
         username: inputs.username,
         password: inputs.password,
       });
@@ -48,7 +48,11 @@ const Login = () => {
             placeholder="Password_123"
             onChange={handleInputChange}
           />
-          {error && <div style={{color:'red',padding:10}}>Username or Passord Incorrect</div>}
+          {error && (
+            <div style={{ color: "red", padding: 10 }}>
+              Username or Passord Incorrect
+            </div>
+          )}
           <button type="submit">Login</button>
         </form>
       </div>

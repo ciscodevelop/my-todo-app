@@ -2,13 +2,14 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { store } from "../../../app/store";
 import { TodoModel } from "../model/todoModel";
+import userCallAxios from "../../axiosIstance/userAxiosIstance";
 export function useTodos() {
   const [todos, setTodos] = useState<TodoModel[]>([]);
   const accessToken = store.getState().user.accessToken;
   // FETCH TODOS
   useEffect(() => {
     async function getTodos() {
-      const response = await axios.get("http://localhost:8800/api/todos", {
+      const response = await userCallAxios.get("todos", {
         headers: {
           Authorization: "Bearer " + accessToken,
         },
@@ -21,7 +22,7 @@ export function useTodos() {
   const deleteTodo = async (id: any) => {
     if (window.confirm("Vuoi elimare definitivamente")) {
       try {
-        await axios.delete(`http://localhost:8800/api/todos/${id}`, {
+        await userCallAxios.delete(`todos/${id}`, {
           headers: {
             Authorization: "Bearer " + accessToken,
           },
@@ -35,9 +36,9 @@ export function useTodos() {
   // UPDATE STATE TODO
   const stateTodo = async (id: any, isComplete: boolean) => {
     try {
-      await axios
+      await userCallAxios
         .patch(
-          `http://localhost:8800/api/todos/${id}`,
+          `todos/${id}`,
           { isComplete: !isComplete },
           {
             headers: {
@@ -62,9 +63,9 @@ export function useTodos() {
   // ADD TODO
   const addTodo = (inputTodo: string) => {
     try {
-      axios
+      userCallAxios
         .post(
-          "http://localhost:8800/api/todos",
+          "todos",
           { text: inputTodo },
           {
             headers: {

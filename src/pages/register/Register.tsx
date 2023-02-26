@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./register.scss";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
+import requestCallAxios from "../../features/axiosIstance/requestAxiosIstance";
 
 const Register = () => {
   const location = useLocation();
@@ -13,7 +14,7 @@ const Register = () => {
     e.preventDefault();
     try {
        
-        await axios.post('http://localhost:8800/api/auth/register',
+        await requestCallAxios.post('auth/register',
         { email: inputs.email, password: inputs.password,username: inputs.username})
        navigate('/login')
       
