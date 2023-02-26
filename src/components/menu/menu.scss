@@ -1,0 +1,48 @@
+.menu {
+  width: 100%;
+  height: 100%;
+  top: 70px;
+  position: absolute;
+  background: #000000;
+  z-index: 1;
+  transition: all 1s ease;
+  animation: enter;
+  animation-duration: 1s;
+  // clip-path: circle();
+  @keyframes enter {
+    0% {
+      opacity: 0;
+      clip-path: circle(0);
+    }
+    50% {
+      opacity: 0.5;
+      clip-path: circle(50%);
+    }
+    100% {
+      opacity: 1;
+      clip-path: circle(100%);
+    }
+  }
+
+  .link-menu {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    a {
+        text-align: center;
+        width: 80%;
+        font-size: 28px;
+     
+      text-decoration: none;
+      color: inherit;
+      border-radius: 10px;
+      &:hover{
+        background: #888;
+      }
+    }
+  }
+}

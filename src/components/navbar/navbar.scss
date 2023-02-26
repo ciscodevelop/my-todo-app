@@ -1,11 +1,13 @@
+@import "../../sass/global.scss";
 .navbar {
   height: 70px;
   background: #000;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  color: white;
-  //overflow: hidden;
+  color: white;   
+  z-index: 99;  
+  transition: all 1s ease;
   .left {
     h3 {
     }
@@ -23,7 +25,13 @@
       color: inherit;
       margin-right: 50px;
     }
+    @include mobile {
+      .link-navbar{
+        display: none;
+      }
+    }
     .profile-container {
+      
       display: flex;
       align-items: center;
       .profile-info {
@@ -39,12 +47,17 @@
             margin-right: 10px;
           }
         }
-        .icon {
-          background: red;
-          cursor: pointer;
+        .icon-arrow {
+          // background: red;
+        }
+        cursor: pointer;
+        &:hover {
+          .menu-profile {
+            display: flex;
+          }
         }
       }
-      .menu {
+      .menu-profile {
         width: 100%;
         background: white;
         top: 50px;
@@ -52,25 +65,55 @@
         border-radius: 10px;
         padding: 10px;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
         display: none;
         span {
           text-align: center;
-           cursor: pointer;
-          margin: 5px 0;           
+          cursor: pointer;
+          margin: 5px 0;
           border-radius: 5px;
           padding: 5px;
           &:hover {
             background: #88888864;
           }
         }
-      }&:hover {
-        .menu {
+      }
+    }
+    @include mobile {
+      .container-menu {
+        .menu-burger {
+          width: 30px;
+          height: 20px;
           display: flex;
           flex-direction: column;
-          position: absolute;
+          align-items: center;
+          justify-content: space-between;
+          margin: 0 20px;
+          cursor: pointer;
+          //border: 1px solid red;
+
+          span {
+            width: 30px;
+            height: 2px;
+            background: white;
+            transform-origin: left;
+            transition: all 0.5s ease-in-out;
+          }
+          &.menu-open {
+            .s2 {
+              opacity: 0;
+            }
+            .s1 {
+              transform: rotate(45deg);
+            }
+            .s3 {
+              transform: rotate(-45deg);
+            }
+          }
         }
       }
-      
     }
   }
 }

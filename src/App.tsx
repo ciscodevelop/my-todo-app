@@ -6,12 +6,14 @@ import Todos from "./pages/todos/Todos";
 import About from "./pages/about/About";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import { useState } from "react";
 
 function App() {
+  const [menu, setMenu] = useState(false);
   return (
     <div className="app">
       <header className="app-header">
-        <Navbar />
+        <Navbar menu={menu} setMenu={setMenu} />
       </header>
       <main>
         <Routes>
