@@ -4,9 +4,9 @@ import "./about.scss";
 const About = () => {
    
   return (
-    <div className="about">About
+<div className="about">about</div>
    
-    </div>
+     
   )
 }
 

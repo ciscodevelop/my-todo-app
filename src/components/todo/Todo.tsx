@@ -12,11 +12,11 @@ const Todo = ({ todoProps, handleState, handleDelete }: any) => {
           checked={todoProps.isComplete}
           onChange={() => handleState(todoProps._id!, todoProps.isComplete)}
         />
-        <h1
+        <h2
           style={todoProps.isComplete ? { textDecoration: "line-through" } : {}}
         >
           {todoProps.text}
-        </h1>
+        </h2>
         <h5>{todoProps.title}Spesa</h5>
         <h6>{format(todoProps.createdAt!)}</h6>
         <DeleteForeverOutlined

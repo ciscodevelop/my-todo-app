@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./register.scss";
-import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import requestCallAxios from "../../features/axiosIstance/requestAxiosIstance";
 

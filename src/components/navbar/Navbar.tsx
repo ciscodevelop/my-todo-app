@@ -1,11 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
 import "./navbar.scss";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../app/hooks";
 import { resetUser, selectUser } from "../../features/user/userSlice";
 import { useDispatch } from "react-redux";
 import { ArrowDropDownOutlined } from "@mui/icons-material";
 import { resetTodos } from "../../features/todos/todosSlice";
-import { useState } from "react";
 import Menu from "../menu/Menu";
 
 const Navbar = ({menu ,setMenu}:any) => {
@@ -21,12 +20,12 @@ const Navbar = ({menu ,setMenu}:any) => {
   };
   return (
     <nav className="navbar">
-      {menu && <Menu setMenu={setMenu} />}
+      {menu && <Menu setMenu={setMenu} user={user} />}
       
       <div className="left">
         
         <Link to={'/'}>
-        <h3>Todo App</h3>
+        <h3  >Todo App</h3>
         </Link>
       </div>
       <div className="right">

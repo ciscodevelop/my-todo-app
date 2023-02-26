@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { store } from "../../../app/store";
 import { TodoModel } from "../model/todoModel";
