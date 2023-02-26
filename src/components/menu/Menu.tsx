@@ -4,11 +4,11 @@ const Menu = () => {
   return (
     <div className="menu">
       <div className="link-menu">
-        <Link to="">Home</Link>
-        <Link to="">Todos</Link>
-        <Link to="">Sign up</Link>
-        <Link to="">Sign in</Link>
-        <Link to="">About</Link>
+        <Link to="/">Home</Link>
+        <Link to="/todos">Todos</Link>
+        <Link to="/login">Sign up</Link>
+        <Link to="/register">Sign in</Link>
+        <Link to="/about">About</Link>
       </div>
     </div>
   );
