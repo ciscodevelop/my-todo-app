@@ -14,8 +14,8 @@ const Todos = () => {
     addTodo(textTodo);
     setTextTodo("");
   }
-  const handleState = (id: string, isComplete: any) => {
-    stateTodo(id, isComplete);
+  const handleState = (id: string, isComplete: any,text:any) => {
+    stateTodo(id, isComplete,text);
   };
   const handleDelete = (id: string) => {
     deleteTodo(id);

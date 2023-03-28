@@ -10,17 +10,33 @@
         border-radius: 10px;
         box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.5);
         //
-        h2 {
+        .input-checkbox{
+          margin-bottom: 20px;
+          &:checked{
+
+            -webkit-box-shadow: 0px 0px 15px 4px #97FF87; 
+            box-shadow: 0px 0px 15px 4px #97FF87;
+          }
+        }
+        .input-text {
           //border: 1px solid red;
+          height: auto;
           width: 300px;
           height: auto;
-          overflow: hidden;
-          word-wrap: break-word;
+          margin-bottom: 20px;
+          //overflow: hidden;
+         // word-wrap: break-word;
           background: -webkit-linear-gradient(45deg, #09009f, #00ff95 50%);
           background-clip: border-box;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           font-size: calc(10px + 3vmin);
+          outline: none;
+          border: none;
+          cursor:text;
+          -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+          
         }
         h6 {
           margin: 10px;

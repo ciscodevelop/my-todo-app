@@ -1,9 +1,9 @@
 import { useState } from "react";
-import "./login.scss"; 
+import "./login.scss";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addUser } from "../../features/user/userSlice"; 
-import requestCallAxios from "../../features/axiosIstance/requestAxiosIstance";
+import { addUser } from "../../features/user/userSlice";
+import requestCallAxios from "../../features/axiosIstance/publicRequestAxiosIstance";
 
 const Login = () => {
   const [inputs, setInputs] = useState<any>({});
@@ -27,6 +27,7 @@ const Login = () => {
 
   const handleInputChange = (e: any) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
+    
   };
   return (
     <div className="login">

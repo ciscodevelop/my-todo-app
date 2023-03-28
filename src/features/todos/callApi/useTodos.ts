@@ -33,12 +33,15 @@ export function useTodos() {
     }
   };
   // UPDATE STATE TODO
-  const stateTodo = async (id: any, isComplete: boolean) => {
+  const stateTodo = async (id: any, isComplete: boolean,text:any) => {
+     
+    console.log(id,!isComplete,text);
+    
     try {
       await userCallAxios
         .patch(
           `todos/${id}`,
-          { isComplete: !isComplete },
+          { isComplete: !isComplete ,text},
           {
             headers: {
               Authorization: "Bearer " + accessToken,
